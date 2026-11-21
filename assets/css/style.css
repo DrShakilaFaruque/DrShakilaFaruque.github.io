@@ -298,3 +298,10 @@ address { font-style: normal; }
 }
 .card p { grid-column: 1 / -1; margin-top: 12px; }
 .card h3 { align-self: center; margin: 0; }
+
+/* ---------- BLRI logo ---------- */
+.brand-logo { width: 44px; height: auto; flex: none; border-radius: 50%; background: #fff; }
+.foot-brand .brand-logo { width: 54px; padding: 2px; }
+.hl-more { display: inline-flex; align-items: center; gap: 6px; color: var(--teal); }
+.hl-more:hover { gap: 10px; color: var(--navy); }
+.sec .hl-grid + .credit { margin-top: 16px; }
