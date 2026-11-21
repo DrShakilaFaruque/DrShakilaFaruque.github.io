@@ -1,15 +1,15 @@
 /* Dr. Shakila Faruque: academic portfolio. Minimal, navy and teal. */
 :root {
-  --navy: #0f2747;
-  --navy-2: #1b3a63;
-  --teal: #0e857a;
-  --teal-bright: #19a597;
-  --teal-soft: #e8f4f2;
-  --grey-bg: #f4f7f8;
-  --ink: #1d2733;
-  --ink-2: #4a5663;
+  --navy: #0b2a5b;
+  --navy-2: #163c78;
+  --teal: #0a8c80;
+  --teal-bright: #14b8a6;
+  --teal-soft: #e3f5f1;
+  --grey-bg: #f1f6f8;
+  --ink: #131f2c;
+  --ink-2: #35424f;
   --muted: #6c7884;
-  --line: #dde5e9;
+  --line: #d3e0e5;
   --radius: 10px;
   --shadow: 0 2px 10px rgba(15, 39, 71, .07);
   --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
@@ -251,3 +251,50 @@ address { font-style: normal; }
 .pub .cite { margin: 0; font-size: .95rem; color: var(--ink-2); }
 .pub .cite i { color: var(--ink); }
 .pubs-sel { margin-top: 4px; }
+
+/* ---------- Colour and contrast pass (closer to the mockup) ---------- */
+.sec h2 { font-size: 2rem; }
+.sec h2::after { width: 56px; height: 4px; background: var(--teal-bright); }
+.rule { height: 4px; width: 64px; }
+.hero::after { background: linear-gradient(90deg, #fff 0%, #fff 30%, rgba(255, 255, 255, .55) 52%, rgba(255, 255, 255, 0) 82%); }
+.hero-bg { width: 70%; }
+.hero h1 { color: var(--navy); }
+
+/* Research area cards: mint, icon beside the text */
+.card { background: var(--teal-soft); border-color: #c6e6df; box-shadow: none; display: grid; grid-template-columns: 52px 1fr; column-gap: 16px; align-items: start; }
+.card .ico { background: transparent; width: 52px; height: 52px; margin: 0; color: var(--teal); }
+.card .ico svg { width: 40px; height: 40px; stroke-width: 1.5; }
+.card h3 { font-size: 1.12rem; margin: 2px 0 6px; }
+.card p { grid-column: 2; color: var(--ink-2); }
+.card:hover { box-shadow: 0 8px 20px rgba(11, 42, 91, .12); }
+
+/* Selected publications: boxed list with teal years */
+.pubs-sel { background: var(--grey-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 4px 22px; }
+.pubs-sel .pub:first-child { border-top: 0; }
+.pubs-sel .pub:last-child { border-bottom: 0; }
+.pub .yr { color: var(--teal); }
+.pub h3 { color: var(--navy); }
+
+/* Stronger accents */
+.tag { background: var(--teal-bright); color: #04302b; }
+.feature { background: var(--navy); }
+.btn-solid { background: var(--navy); border-color: var(--navy); }
+.btn-solid:hover { background: var(--navy-2); border-color: var(--navy-2); }
+.btn-line { border-color: var(--navy); color: var(--navy); }
+.edu-card { border-top: 3px solid var(--teal-bright); }
+.list-card { border-top: 3px solid var(--teal-bright); }
+.tech li { border-left-color: var(--teal-bright); }
+.sec-tint { background: var(--grey-bg); }
+.page-head { background: var(--teal-soft); border-bottom: 3px solid var(--teal-bright); }
+.nav a[aria-current="page"] { border-bottom-color: var(--teal-bright); border-bottom-width: 3px; }
+
+/* Footer: deeper navy */
+.site-footer { background: #091f45; color: #c9d7ea; }
+.foot-brand .brand-mark { background: var(--teal-bright); color: #04302b; }
+@media (max-width: 800px) {
+  .card { grid-template-columns: 44px 1fr; }
+  .pubs-sel { padding: 4px 14px; }
+  .hero-bg { width: 100%; }
+}
+.card p { grid-column: 1 / -1; margin-top: 12px; }
+.card h3 { align-self: center; margin: 0; }
