@@ -71,3 +71,25 @@ document.querySelectorAll('.pub .authors, .pub .cite').forEach(el => {
   }, { rootMargin: '0px 0px -6% 0px', threshold: 0.03 });
   els.forEach(el => io.observe(el));
 })();
+
+// Gallery lightbox: click a photo to enlarge; Esc or a click closes it
+(function () {
+  const thumbs = document.querySelectorAll('.shot-btn');
+  if (!thumbs.length) return;
+  const box = document.createElement('div');
+  box.className = 'lightbox';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-label', 'Enlarged photo');
+  box.innerHTML = '<img alt="">';
+  document.body.appendChild(box);
+  const big = box.querySelector('img');
+  const close = () => box.classList.remove('open');
+  thumbs.forEach(btn => btn.addEventListener('click', () => {
+    const img = btn.querySelector('img');
+    big.src = img.currentSrc || img.src;
+    big.alt = img.alt;
+    box.classList.add('open');
+  }));
+  box.addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();

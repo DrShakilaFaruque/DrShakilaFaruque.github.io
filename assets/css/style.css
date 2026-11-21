@@ -305,3 +305,44 @@ address { font-style: normal; }
 .hl-more { display: inline-flex; align-items: center; gap: 6px; color: var(--teal); }
 .hl-more:hover { gap: 10px; color: var(--navy); }
 .sec .hl-grid + .credit { margin-top: 16px; }
+
+/* ---------- Section contrast: distinct bands and stronger outlines ---------- */
+:root { --line-strong: #a9cbd2; }
+.sec-tint { background: linear-gradient(180deg, #e7f5f2 0%, #f1f7fb 100%); border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.page-head { background: linear-gradient(135deg, #dcf2ee 0%, #eaf3fa 100%); }
+
+.sec-navy { background: linear-gradient(135deg, #0a2350 0%, #12407a 100%); color: #d7e4f4; border: 0; }
+.sec-navy h2 { color: #fff; }
+.sec-navy .link-more { color: #6fe3d3; }
+.sec-navy .when { color: #fff; }
+.sec-navy .what { color: #c9d9ee; }
+.sec-navy .what strong { color: #fff; }
+.sec-navy .timeline li { border-left-color: rgba(255, 255, 255, .3); }
+.sec-navy .timeline li::before { border-color: #0f3169; }
+.sec-navy .acc { color: var(--ink); border-color: transparent; }
+
+.sec-contact { background: linear-gradient(135deg, #075e57 0%, #0b8b7f 100%); color: #fff; border: 0; }
+.sec-contact h2, .sec-contact .contact-item strong { color: #fff; }
+.sec-contact h2::after { background: #fff; }
+.sec-contact a { color: #fff; }
+.sec-contact .contact-item svg { color: #bff5ec; }
+
+.card, .edu-card, .list-card, .hl-card, .tech li, .acc, .tbl, .pubs-sel { border-width: 1.5px; border-color: var(--line-strong); }
+.card { border-color: #8fcfc4; }
+.edu-card, .list-card { border-top: 4px solid var(--teal-bright); }
+.hl-card { box-shadow: 0 4px 14px rgba(11, 42, 91, .1); }
+
+/* ---------- Gallery ---------- */
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 8px; }
+.shot { margin: 0; }
+.shot-btn { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 12px; overflow: hidden; }
+.shot-btn img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1.5px solid var(--line-strong); border-radius: 12px; transition: transform .3s ease; }
+.shot-btn:hover img, .shot-btn:focus-visible img { transform: scale(1.06); }
+.shot figcaption { margin-top: 8px; font-size: .86rem; color: var(--ink-2); }
+
+.lightbox { position: fixed; inset: 0; z-index: 60; background: rgba(9, 25, 56, .9); display: none; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: 90vh; border-radius: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, .5); }
+
+@media (max-width: 1000px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px) { .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
