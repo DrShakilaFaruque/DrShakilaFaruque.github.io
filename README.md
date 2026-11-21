@@ -8,7 +8,6 @@ Pages: `index.html` (home), `about.html`, `research.html`, `publications.html` (
 assets/css/style.css
 assets/js/main.js
 assets/img/        portrait, BLRI campus photo, stock photographs
-assets/Dr-Shakila-Faruque-CV.pdf
 ```
 
 ## Notes
